@@ -8,7 +8,6 @@
 - Suggestions for Going Further
 
 ### Network Topology
-_TODO: Fill out the information below._
 
 The following machines were identified on the network:
 
@@ -39,9 +38,9 @@ The following machines were identified on the network:
 
 
 ### Description of Targets
-_TODO: Answer the questions below._
+[nmap scan of local network](nmap_scan.txt)
 
-The target of this attack was: `Target 1` (TODO: IP Address).
+The target of this attack was: `Target 1` (192.168.1.110).
 
 Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are possible ports of entry for attackers. As such, the following alerts have been implemented:
 
