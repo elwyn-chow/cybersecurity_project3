@@ -11,6 +11,8 @@
 
 The following machines were identified on the network:
 
+![](final-project-setup.png)
+
 - Capstone 
   - **Operating System**: Ubuntu 18.04.1 LTS sever1 tty1
   - **Purpose**: Filebeat and Metricbeat are installed and will forward logs to the ELK machine. This VM is in the network solely for the purpose of testing alerts.
@@ -48,7 +50,7 @@ Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are pos
 
 Traffic to these services should be carefully monitored. To this end, we have implemented the alerts below:
 
-#### Excessive HTTP Errors
+#### Alert 1: Excessive HTTP Errors
 
 packetbeat indice:
 
@@ -60,7 +62,7 @@ Alert 1 is implemented as follows:
   - **Vulnerability Mitigated**: attempts at DDOS and brute force attacks on passwords
   - **Reliability**: medium - the alert cannot distinguish between attackers and a high number of legitimate requests amd ot only takes 1.33 requests per second to trigger this alert.
 
-#### HTTP Request Size Monitor
+#### Alert 2: HTTP Request Size Monitor
 
 packetbeat indice
 
@@ -72,14 +74,18 @@ Alert 2 is implemented as follows:
   - **Vulnerability Mitigated**: preventing large uploads particularly binary files
   - **Reliability**: low - a typical HTTP request size is between 700-800 bytes ([Source](http://dev.chromium.org/spdy/spdy-whitepaper)) - it only takes 5 typical requests to trigger this alert so it is likely to trigger false positives often.
 
-#### Name of Alert 3
-Alert 3 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+#### Alert 3: CPU Usage Monitor
 
-_TODO Note: Explain at least 3 alerts. Add more if time allows._
+metricbeat indice
+
+`WHEN max() OF system.process.cpu.total.pct OVER all documents IS ABOVE 0.5 FOR THE LAST 5 minutes`
+
+Alert 3 is implemented as follows:
+  - **Metric**: the maximum CPU usage (in percent) over all documents during the last 5 minutes
+  - **Threshold**: 0.5%
+  - **Vulnerability Mitigated**: TODO
+  - **Reliability**: low - 0.5% is a very low threshold 
+
 
 ### Suggestions for Going Further (Optional)
 _TODO_: 
