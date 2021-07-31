@@ -43,6 +43,8 @@ The following vulnerabilities were identified on each target:
 | Service Description and Version | Severity   | CVE             |
 |---------------------------------|------------|-----------------|
 | OpenSSH 6.7p1                   | 6.5 Medium | [CVE-2016-0777](https://nvd.nist.gov/vuln/detail/CVE-2016-0777)
+| OpenSSH 6.7p1                   | 8.1 High   | [CVE-2016-0778](https://nvd.nist.gov/vuln/detail/CVE-2016-0778)
+
 
 _TODO: Include vulnerability scan results to prove the identified vulnerabilities._
 
