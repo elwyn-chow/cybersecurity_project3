@@ -8,7 +8,6 @@
 - Suggestions for Going Further
 
 ### Network Topology
-_TODO: Fill out the information below._
 
 The following machines were identified on the network:
 
@@ -39,9 +38,9 @@ The following machines were identified on the network:
 
 
 ### Description of Targets
-_TODO: Answer the questions below._
+[nmap scan of local network](nmap_scan.txt)
 
-The target of this attack was: `Target 1` (TODO: IP Address).
+The target of this attack was: `Target 1` (192.168.1.110).
 
 Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are possible ports of entry for attackers. As such, the following alerts have been implemented:
 
@@ -49,21 +48,29 @@ Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are pos
 
 Traffic to these services should be carefully monitored. To this end, we have implemented the alerts below:
 
-#### Name of Alert 1
-_TODO: Replace `Alert 1` with the name of the alert._
+#### Excessive HTTP Errors
+
+packetbeat indice:
+
+`WHEN count() GROUPED OVER top 5 'http.response.status_code' IS ABOVE 400 FOR THE LAST 5 minutes`
 
 Alert 1 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+  - **Metric**: total count of the five most common HTTP response statii over the last 5 minutes
+  - **Threshold**: 400
+  - **Vulnerability Mitigated**: attempts at DDOS and brute force attacks on passwords
+  - **Reliability**: medium - the alert cannot distinguish between attackers and a high number of legitimate requests amd ot only takes 1.33 requests per second to trigger this alert.
 
-#### Name of Alert 2
+#### HTTP Request Size Monitor
+
+packetbeat indice
+
+`WHEN sum() of http.request.bytes OVER all documents IS ABOVE 3500 FOR THE LAST 1 minute`
+
 Alert 2 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+  - **Metric**: total size in bytes of the request (body and headers) of all documents in the last minute
+  - **Threshold**: 3500 bytes
+  - **Vulnerability Mitigated**: preventing large uploads particularly binary files
+  - **Reliability**: low - a typical HTTP request size is between 700-800 bytes ([Source](http://dev.chromium.org/spdy/spdy-whitepaper)) - it only takes 5 typical requests to trigger this alert so it is likely to trigger false positives often.
 
 #### Name of Alert 3
 Alert 3 is implemented as follows:
