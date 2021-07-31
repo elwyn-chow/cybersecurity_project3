@@ -27,8 +27,9 @@ Service Info: Host: TARGET1; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 This scan identifies the services below as potential points of entry:
 - Target 1
 
-| 22/tcp   | ssh          | OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0) |
+| Port     | Service      | Service Description and Version              |
 |----------|--------------|----------------------------------------------|
+| 22/tcp   | ssh          | OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0) |
 | 80/tcp   | http         | Apache httpd 2.4.10 ((Debian))               |
 | 111/tcp  | rpcbind      | 2-4 (RPC #100000)                            |
 | 139/tcp  | netbios-ssn  | Samba smbd 3.X - 4.X (workgroup: WORKGROUP)  |
