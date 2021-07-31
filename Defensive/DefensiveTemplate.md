@@ -11,15 +11,32 @@
 _TODO: Fill out the information below._
 
 The following machines were identified on the network:
-- Name of VM 1
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
-- Name of VM 2
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
-- Etc.
+
+- Capstone 
+  - **Operating System**: Ubuntu 18.04.1 LTS sever1 tty1
+  - **Purpose**: Filebeat and Metricbeat are installed and will forward logs to the ELK machine. This VM is in the network solely for the purpose of testing alerts.
+  - **IP Address**: 192.168.1.105
+- ELK 
+  - **Operating System**: Ubuntu 18.04.4 LTS ELK tty1
+  - **Purpose**: Holds the Kibana dashboards. The same ELK setup that you created in Project 1. 
+  - **IP Address**: 192.168.1.100
+- Kali
+  - **Operating System**: Kali GNU/Linux Rolling Release 2020.1
+  - **Purpose**: A standard Kali Linux machine for use in the penetration test. Credentials are root:toor.
+  - **IP Address**: 192.168.1.90
+- Target 1
+  - **Operating System**: Debian GNU/Linux 8 target1 tty1
+  - **Purpose**: Exposes a vulnerable WordPress server.
+  - **IP Address**: 192.168.1.110
+- Target 2
+  - **Operating System**: Debian GNU/Linux 8 target2 tty1
+  - **Purpose**: Exposes a vulnerable WordPress server.
+  - **IP Address**: 192.168.1.115
+- ML-RefVm-684427
+  - **Operating System**: Windows 10 Pro Version 1909
+  - **Purpose**: Windows Hyper-V Host
+  - **IP Address**: 192.168.1.1
+
 
 ### Description of Targets
 _TODO: Answer the questions below._
