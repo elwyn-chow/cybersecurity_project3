@@ -45,8 +45,9 @@ The following vulnerabilities were identified on each target:
 | OpenSSH 6.7p1                   | 6.5 Medium | [CVE-2016-0777](https://nvd.nist.gov/vuln/detail/CVE-2016-0777)
 | OpenSSH 6.7p1                   | 8.1 High   | [CVE-2016-0778](https://nvd.nist.gov/vuln/detail/CVE-2016-0778)
 
+I followed the [instructions on detecting CVEs using nmap](https://securitytrails.com/blog/nmap-vulnerability-scan) vulnerability scan scripts.
 
-_TODO: Include vulnerability scan results to prove the identified vulnerabilities._
+`nmap -sV --script=vulscan/vulscan.nse 192.168.1.110`
 
 ### Exploitation
 _TODO: Fill out the details below. Include screenshots where possible._
