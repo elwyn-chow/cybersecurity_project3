@@ -48,6 +48,7 @@ The following vulnerabilities were identified on each target:
 I followed the [instructions on detecting CVEs using nmap](https://securitytrails.com/blog/nmap-vulnerability-scan) vulnerability scan scripts.
 
 `nmap -sV --script=vulscan/vulscan.nse 192.168.1.110`
+[Results of nmap scan](nmap_target1_vulscan.txt)
 
 ### Exploitation
 _TODO: Fill out the details below. Include screenshots where possible._
