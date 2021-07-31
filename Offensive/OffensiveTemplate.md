@@ -40,10 +40,35 @@ _TODO: Fill out the list below. Include severity, and CVE numbers, if possible._
 The following vulnerabilities were identified on each target:
 - Target 1
 
-| Service Description and Version | Severity   | CVE             |
-|---------------------------------|------------|-----------------|
-| OpenSSH 6.7p1                   | 6.5 Medium | [CVE-2016-0777](https://nvd.nist.gov/vuln/detail/CVE-2016-0777)
-| OpenSSH 6.7p1                   | 8.1 High   | [CVE-2016-0778](https://nvd.nist.gov/vuln/detail/CVE-2016-0778)
+| Service and Vulnerable Versions                     | Severity (CVSS V3.x)     | CVE             |
+|-----------------------------------------------------|--------------------------|-----------------|
+| OpenSSH 5.x, 6.x, and 7.x before 7.1p2              | 6.5 Medium               | [CVE-2016-0777](https://nvd.nist.gov/vuln/detail/CVE-2016-0777) |
+| OpenSSH 5.x, 6.x, and 7.x before 7.1p2              | 8.1 High                 | [CVE-2016-0778](https://nvd.nist.gov/vuln/detail/CVE-2016-0778) |
+| Apache HTTP Server versions 2.4.6 to 2.4.46         | 5.3 Medium               | [CVE-2019-17567](https://nvd.nist.gov/vuln/detail/CVE-2019-17567) |
+| Apache HTTP server 2.4.0 to 2.4.39                  | 6.1 Medium               | [CVE-2019-10098](https://nvd.nist.gov/vuln/detail/CVE-2019-10098) |
+| Apache HTTP Server 2.4.0-2.4.39                     | 6.1 Medium               | [CVE-2019-10092](https://nvd.nist.gov/vuln/detail/CVE-2019-10092) |
+| Apache HTTP Server 2.4.0 to 2.4.38                  | 5.3 Medium               | [CVE-2019-0220](https://nvd.nist.gov/vuln/detail/CVE-2019-0220) |
+| Apache HTTP Server 2.4 release 2.4.38 and prior     | 7.5 High                 | [CVE-2019-0217](https://nvd.nist.gov/vuln/detail/CVE-2019-0217) |
+| Apache HTTP Server prior to version 2.4.30          | 7.5 High                 | [CVE-2018-1303](https://nvd.nist.gov/vuln/detail/CVE-2018-1303) |
+| Apache httpd 2.4.0 to 2.4.29                        | 5.3 Medium               | [CVE-2018-1283](https://nvd.nist.gov/vuln/detail/CVE-2018-1283) |
+| Apache httpd 2.2.x 2.4.x before 2.4.26              | 9.8 Critical             | [CVE-2017-3169](https://nvd.nist.gov/vuln/detail/CVE-2017-3169) |
+| Apache httpd 2.4.x before 2.4.26                    | 9.8 Critical             | [CVE-2017-3167](https://nvd.nist.gov/vuln/detail/CVE-2017-3167) |
+| Apache httpd 2.4.0 to 2.4.29                        | 8.1 High                 | [CVE-2017-15715](https://nvd.nist.gov/vuln/detail/CVE-2017-15715) |
+| Apache HTTP Server, in all releases prior to 2.4.25 | 7.5 High                 | [CVE-2016-8743](https://nvd.nist.gov/vuln/detail/CVE-2016-8743) |
+| Apache HTTP Server versions 2.4.0 to 2.4.23         | 7.5 High                 | [CVE-2016-2161](https://nvd.nist.gov/vuln/detail/CVE-2016-2161) |
+| Apache HTTP Server versions 2.4.0 to 2.4.23         | 7.5 High                 | [CVE-2016-0736](https://nvd.nist.gov/vuln/detail/CVE-2016-0736) |
+| Apache HTTP Server 2.4.x before 2.4.14              | 4.3 Medium (CVSS V2.0)   | [CVE-2015-3185](https://nvd.nist.gov/vuln/detail/CVE-2015-3185) |
+| Apache HTTP Server before 2.4.14                    | 5.0 Medium (CVSS V2.0)   | [CVE-2015-3183](https://nvd.nist.gov/vuln/detail/CVE-2015-3183) |
+| Apache HTTP Server 2.3.x and 2.4.x through 2.4.10   | 4.3 Medium (CVSS V2.0)   | [CVE-2014-8109](https://nvd.nist.gov/vuln/detail/CVE-2014-8109) |
+| Apache HTTP Server 2.4.10                           | 5.0 Medium (CVSS V2.0)   | [CVE-2014-3583](https://nvd.nist.gov/vuln/detail/CVE-2014-3583) |
+| Apache HTTP Server before 2.4.11                    | 5.0 Medium (CVSS V2.0)   | [CVE-2014-3581](https://nvd.nist.gov/vuln/detail/CVE-2014-3581) |
+| Apache HTTP Server versions 2.4.0 to 2.4.46         | 7.5 Medium (CVSS V2.0)   | [CVE-2021-26691](https://nvd.nist.gov/vuln/detail/CVE-2021-26691) |
+| Apache HTTP Server versions 2.4.0 to 2.4.46         | 7.5 High                 | [CVE-2021-26690](https://nvd.nist.gov/vuln/detail/CVE-2021-26690) |
+| Apache HTTP Server versions 2.4.0 to 2.4.46         | 7.3 High                 | [CVE-2020-35452](https://nvd.nist.gov/vuln/detail/CVE-2020-35452) |
+| Apache HTTP Server 2.4.0 to 2.4.41                  | 5.3 Medium               | [CVE-2020-1934](https://nvd.nist.gov/vuln/detail/CVE-2020-1934) |
+| Apache HTTP Server 2.4.0 to 2.4.41                  | 6.1 Medium               | [CVE-2020-1927](https://nvd.nist.gov/vuln/detail/CVE-2020-1927) |
+| Apache HTTP Server versions 2.4.41 to 2.4.46        | 7.5 High                 | [CVE-2020-13950](https://nvd.nist.gov/vuln/detail/CVE-2020-13950) |
+
 
 I followed the [instructions on detecting CVEs using nmap](https://securitytrails.com/blog/nmap-vulnerability-scan) vulnerability scan scripts.
 
