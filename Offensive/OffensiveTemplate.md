@@ -78,29 +78,35 @@ _TODO: Fill out the details below. Include screenshots where possible._
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 - Target 1
-  - `/var/www/html/service.html contains flag1`: b9bbcb33e11b80be759c4e844862482d
+  - `flag1 is in /var/www/html/service.html`: b9bbcb33e11b80be759c4e844862482d
     - **Exploit Used**
       - Exploited weak password
+    - **Exploit Commands**
          - Found a list of WordPress users (michael and steven)by running wpscan `wpscan –url http://example.com –enumerate u`
           [wpscan results](Target1/wpscan_user_enumerate.txt)
          - The user michael had an obvious password "michael" on both his WordPress and Target1 accounts
          - Logged in as michael and used grep to find flag1 inside /var/www/html/service.html
-            `ssh michael@192.168.1.110`
-         
-            `cd /var/www/html`
-
-            `grep -r flag1 *`
-
+            - `ssh michael@192.168.1.110`
+            - `cd /var/www/html`
+            - `grep -r flag1 *`
             ![Target1/flag1_found.JPG](Target1/flag1_found.JPG)
       
   - `/var/www/flag2.txt`: fc3fd58dcdad9ab23faca6e9a36e581c
     - **Exploit Used**
       - Exploited weak password (same exploit as in flag 1)
-      -
-            `cd /`
+    - **Exploit Commands**
+      - Used find to find flag2.txt
+      - `cd /`
+      - `find . -name flag\* 2>/dev/null`
+      - `cat /var/www/flag2.txt`            
+      ![Target1/flag2_found.JPG](Target1/flag1_found.JPG)
 
-            `find . -name flag\* 2>/dev/null`
-            
-            `cat /var/www/flag2.txt`            
-
-            ![Target1/flag2_found.JPG](Target1/flag1_found.JPG)
+  - `flag3 is in mySQL database`: afc01ab56b50591e7dcc93122770cd2
+    - **Exploits Used**
+      - Exploited weak password (same exploit as in flag 1)
+      - Exploited poorly set file permissions on WordPress configuration file
+    - **Exploit Commands**
+      - Found database credentials file 
+        ![Target1/wp_config_file_found.JPG](Target1/wp_config_file_found.JPG)
+      to access database and used grep
+      `
