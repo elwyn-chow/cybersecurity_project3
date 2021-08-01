@@ -164,11 +164,11 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
 - Target 2
   - `flag1 is in http://192.168.1.115/vendor/PATH`: a2c1f66d2b8051bd3a5874b5b6e43e21
     - **Exploit Used**
-      - Flag left in public file         
+      - Flag left in public file
     - **Exploit Commands**
-       - Run gobuster to create a list of URLs on Target 2:
-         `gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115 | tee [Target2/gobuster_results.txt](Target2/gobuster_results.txt)`
-         ![Target2/gobuster.JPG](Target2/gobuster.JPG)
-       - Open http://192.168.1.115/vendor/PATH [Saved as PATH](Target2/PATH)
-         ![Target2/flag1_found.JPG](Target2/flag1_found.JPG)
+         - Run gobuster to create a list of URLs on Target 2:
+           `gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115 | tee [Target2/gobuster_results.txt](Target2/gobuster_results.txt)`
+          ![Target2/gobuster.JPG](Target2/gobuster.JPG)
+         - Open http://192.168.1.115/vendor/PATH [Saved as PATH](Target2/PATH)
+          ![Target2/flag1_found.JPG](Target2/flag1_found.JPG)
          
