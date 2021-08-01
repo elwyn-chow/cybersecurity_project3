@@ -82,7 +82,8 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
     - **Exploit Used**
       - Exploited weak password
     - **Exploit Commands**
-         - Found a list of WordPress users (michael and steven)by running wpscan `wpscan –url http://example.com –enumerate u`
+         - Found a list of WordPress users (michael and steven) by running wpscan's enumerate users:
+           `wpscan –url http://example.com –enumerate u`
           [wpscan results](Target1/wpscan_user_enumerate.txt)
          - The user michael had an obvious password "michael" on both his WordPress and Target1 accounts
          - Logged in as michael and used grep to find flag1 inside /var/www/html/service.html
