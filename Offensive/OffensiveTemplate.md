@@ -84,10 +84,11 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
          - Found a list of WordPress users by running wpscan `wpscan –url http://example.com –enumerate u`
           [wpscan results](Target1/wpscan_user_enumerate.txt)
          - The user michael had an obvious password "michael" on both his WordPress and Target1 accounts
-         - ```bash
-ssh michael@192.168.1.110`
-cd /var/www/html`
-grep -r flag1 *```
+         - 
+`ssh michael@192.168.1.110`
+`cd /var/www/html`
+`grep -r flag1 *`
+
             ![Target1/flag1_found.JPG](Target1/flag1_found.JPG)
       
   - `flag2.txt`: _TODO: Insert `flag2.txt` hash value_
