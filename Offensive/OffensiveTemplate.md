@@ -174,7 +174,7 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
          - Open http://192.168.1.115/vendor/PATH in web browser:
          
            ![Target2/flag1_found.JPG](Target2/flag1_found.JPG)
-  - `flag2`: 6a8ed560f0b5358ecf844108048eb337
+  - `/var/www/flag2.txt`: 6a8ed560f0b5358ecf844108048eb337
     - **Exploit Used**
       - Exploiting PHPMailer CVE-2016-10033
 
@@ -201,4 +201,25 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
          
          - flag2.txt is found in /var/www:
          
+         ```
+         cd /var/www
+         ls
+         cat flag2.txt
+         ```
+         
          ![Target2/flag2_found.JPG](Target2/flag2_found.JPG)
+  - `/var/www/html/wordpress/wp-content/uploads/2018/11/flag3.png`: 6a8ed560f0b5358ecf844108048eb337
+    - **Exploit Used**
+      - Exploiting PHPMailer CVE-2016-10033
+    - **Exploit Commands**
+         - While the ncat connection is still open from the previous step, find flag files:
+         
+         ```
+         cd /var/www/html/wordpress/wp-content/uploads
+         find . -name flag\*
+         ```     
+         
+         ![Target2/flag3_found.JPG](Target2/flag3_found.JPG)
+         - View the image file at http://192.168.1.115/wordpress/wp-content/uploads/wp-content/uploads/2018/11/flag3.png
+         
+         ![Target2/flag3_image_viewed.JPG](Target2/flag3_image_viewed.JPG)
