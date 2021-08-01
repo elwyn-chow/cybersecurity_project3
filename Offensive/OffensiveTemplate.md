@@ -51,6 +51,7 @@ This scan identifies the services below as potential points of entry:
 | 445/tcp  | netbios-ssn  | Samba smbd 3.X - 4.X (workgroup: WORKGROUP)  |
 
 - Target 2
+
 | Port     | Service      | Service Description and Version              |
 |----------|--------------|----------------------------------------------|
 | 22/tcp   | ssh          | OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0) |
@@ -77,6 +78,19 @@ The following critical and high vulnerabilities were identified on each target:
 `nmap -sV –script vulners –script-args mincvss=7.0 192.168.1.110`
 
 [Results of nmap scan Target 1](nmap_target1_vulscan.txt)
+
+- Target 2
+
+| Service                                       | Severity | CVE             |
+|-----------------------------------------------|----------|-----------------|
+|  OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0) | 10.0     | [CVE-2001-0554](https://vulners.com/cve/CVE-2001-0554) |
+|  OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0) | 8.5      | [CVE-2015-5600](https://vulners.com/cve/CVE-2015-5600) |
+|  OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0) | 7.5      | [CVE-2020-16088](https://vulners.com/cve/CVE-2020-16088) |
+|  Apache httpd 2.4.10 ((Debian))               | 7.5      | [CVE-2021-26691](https://vulners.com/cve/CVE-2021-26691) |
+|  Apache httpd 2.4.10 ((Debian))               | 7.5	     | [CVE-2017-7679](https://vulners.com/cve/CVE-2017-7679) |
+|  Apache httpd 2.4.10 ((Debian))               | 7.5	     | [CVE-2017-7668](https://vulners.com/cve/CVE-2017-7668) |
+|  Apache httpd 2.4.10 ((Debian))               | 7.5	     | [CVE-2017-3169](https://vulners.com/cve/CVE-2017-3169) |
+|  Apache httpd 2.4.10 ((Debian))               | 7.5	     | [CVE-2017-3167](https://vulners.com/cve/CVE-2017-3167) |
 
 `nmap -sV –script vulners –script-args mincvss=7.0 192.168.1.115`
 
