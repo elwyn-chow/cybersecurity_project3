@@ -78,13 +78,13 @@ _TODO: Fill out the details below. Include screenshots where possible._
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 - Target 1
-  - `flag1`: b9bbcb33e11b80be759c4e844862482d
+  - `/var/www/html/service.html contains flag1`: b9bbcb33e11b80be759c4e844862482d
     - **Exploit Used**
       - Exploited weak password
-         - Found a list of WordPress users by running wpscan `wpscan –url http://example.com –enumerate u`
+         - Found a list of WordPress users (michael and steven)by running wpscan `wpscan –url http://example.com –enumerate u`
           [wpscan results](Target1/wpscan_user_enumerate.txt)
          - The user michael had an obvious password "michael" on both his WordPress and Target1 accounts
-         - 
+         - Logged in as michael and used grep to find flag1 inside /var/www/html/service.html
             `ssh michael@192.168.1.110`
          
             `cd /var/www/html`
@@ -93,7 +93,14 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
             ![Target1/flag1_found.JPG](Target1/flag1_found.JPG)
       
-  - `flag2.txt`: _TODO: Insert `flag2.txt` hash value_
+  - `/var/www/flag2.txt`: fc3fd58dcdad9ab23faca6e9a36e581c
     - **Exploit Used**
-      - _TODO: Identify the exploit used_
-      - _TODO: Include the command run_
+      - Exploited weak password (same exploit as in flag 1)
+      -
+            `cd /`
+
+            `find . -name flag\* 2>/dev/null`
+            
+            `cat /var/www/flag2.txt`            
+
+            ![Target1/flag2_found.JPG](Target1/flag1_found.JPG)
