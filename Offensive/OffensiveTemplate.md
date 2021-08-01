@@ -78,11 +78,16 @@ _TODO: Fill out the details below. Include screenshots where possible._
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 - Target 1
-  - `flag1.txt`: _TODO: Insert `flag1.txt` hash value_
+  - `flag1`: b9bbcb33e11b80be759c4e844862482d
     - **Exploit Used**
       - Exploited weak password
          - Found a list of WordPress users by running wpscan `wpscan –url http://example.com –enumerate u`
           [wpscan results](Target1/wpscan_user_enumerate.txt)
+         - The user michael had an obvious password "michael" on both his WordPress and Target1 accounts
+         - `ssh michael@192.168.1.110
+            cd /var/www/html
+            grep -r flag1 *`
+            ![Target1/flag1_found.JPG](Target1/flag1_found.JPG)
       
   - `flag2.txt`: _TODO: Insert `flag2.txt` hash value_
     - **Exploit Used**
