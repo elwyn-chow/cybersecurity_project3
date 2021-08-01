@@ -113,7 +113,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
         `mysqldump -uroot -p"R@v3nSecurity" wordpress | grep --color flag`
         ![Target1/mysqldump_wordpress_command.JPG](Target1/mysqldump_wordpress_command.JPG)
         ![Target1/flags3_and_4_found.JPG](Target1/flags3_and_4_found.JPG)
-  - `/root/flag4.txt`: 
+  - `/root/flag4.txt`: 715dea6c055b9fe3337544932f2941ce
     - **Exploits Used**
       - Exploited weak password of michael (same exploit as in flag 1)
       - Exploited poorly set file permissions on WordPress configuration file (same exploit as in flag 3)
