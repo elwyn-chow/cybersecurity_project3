@@ -35,8 +35,6 @@ This scan identifies the services below as potential points of entry:
 | 139/tcp  | netbios-ssn  | Samba smbd 3.X - 4.X (workgroup: WORKGROUP)  |
 | 445/tcp  | netbios-ssn  | Samba smbd 3.X - 4.X (workgroup: WORKGROUP)  |
 
-_TODO: Fill out the list below. Include severity, and CVE numbers, if possible._
-
 The following vulnerabilities were identified on each target:
 - Target 1
 
@@ -74,9 +72,9 @@ The following vulnerabilities were identified on each target:
 [Results of nmap scan](nmap_target1_vulscan.txt)
 
 ### Exploitation
-_TODO: Fill out the details below. Include screenshots where possible._
 
-The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
+
+The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the following confidential data:
 - Target 1
   - `flag1 is in /var/www/html/service.html`: b9bbcb33e11b80be759c4e844862482d
     - **Exploit Used**
@@ -163,3 +161,14 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
          cat *.txt
          ```
          ![Target1/flag4_found](Target1/flag4_found.JPG)
+- Target 2
+  - `flag1 is in http://192.168.1.115/vendor/PATH`: a2c1f66d2b8051bd3a5874b5b6e43e21
+    - **Exploit Used**
+      - Flag left in public file         
+    - **Exploit Commands**
+       - Run gobuster to create a list of URLs on Target 2:
+         `gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115 | tee [Target2/gobuster_results.txt](Target2/gobuster_results.txt)`
+         ![Target2/gobuster.JPG](Target2/gobuster.JPG)
+       - Open http://192.168.1.115/vendor/[Target2/PATH](Target2/PATH)
+       ![Target2/flag1_found.JPG](Target2/flag1_found.JPG)
+         
