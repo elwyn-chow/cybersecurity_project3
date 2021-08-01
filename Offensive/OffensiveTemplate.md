@@ -182,3 +182,8 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
          - In the search for flag1, I noticed that the directory http://192.168.1.115/vendors/ had a file called class.phpmailer.php. So I ran searchsploit to look for exploits of that file. Notably it found the [exploits/php/webapps/40970.php](https://www.exploit-db.com/exploits/40970)
          
          ![Target2/searchsploit.JPG](Target2/searchsploit.JPG)
+         - Modified the bash script [`exploit.sh`](Target2/exploit.sh) to include IP address 192.168.1.115 in variable TARGET
+         - Run the exploit to upload the backdoor.php file to 192.168.1.115:
+
+         ![Target2/exploit_run.JPG](Target2/exploit_run.JPG)
+         
