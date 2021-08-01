@@ -106,7 +106,11 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
       - Exploited weak password (same exploit as in flag 1)
       - Exploited poorly set file permissions on WordPress configuration file
     - **Exploit Commands**
-      - Found database credentials file 
+      - Found WordPress configuration file:
         ![Target1/wp_config_file_found.JPG](Target1/wp_config_file_found.JPG)
-      to access database and used grep
-      `
+      - Accessed database login credentials from WordPress configuration file:
+        ![Target1/database_credentials_accessed.JPG](Target1/database_credentials_accessed.JPG)
+      - Created a mySQL dump of WordPress database and filtered it with grep (results show flag3 and flag4):
+        `mysqldump -uroot -p"R@v3nSecurity" wordpress | grep --color flag`
+        ![Target1/mysqldump_wordpress_command.JPG](Target1/mysqldump_wordpress_command.JPG)
+        ![Target1/flags3_and_4_found.JPG](Target1/flags3_and_4_found.JPG)
