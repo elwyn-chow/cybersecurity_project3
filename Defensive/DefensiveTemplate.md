@@ -83,8 +83,8 @@ metricbeat indice
 Alert 3 is implemented as follows:
   - **Metric**: the maximum CPU usage (in percent) over all documents during the last 5 minutes
   - **Threshold**: 0.5%
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: low - 0.5% is a very low threshold 
+  - **Vulnerability Mitigated**: attempts to run brute force crackers while logged into file system
+  - **Reliability**: low - 0.5% is a very low threshold and it is easy for an attacker to exfiltrate password files/hashes to crack on another machine
 
 
 ### Suggestions for Going Further (Optional)
