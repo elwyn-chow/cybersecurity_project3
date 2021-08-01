@@ -171,7 +171,6 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
            `gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115 | tee gobuster_results.txt`
           [gobuster_results.txt](Target2/gobuster_results.txt)
           ![Target2/gobuster.JPG](Target2/gobuster.JPG) 
-         - Open http://192.168.1.115/vendor/PATH [Saved as PATH](Target2/PATH)
-         
+         - Open http://192.168.1.115/vendor/PATH in web browser:
           ![Target2/flag1_found.JPG](Target2/flag1_found.JPG)
          
