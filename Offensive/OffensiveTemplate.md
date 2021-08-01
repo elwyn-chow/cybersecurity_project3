@@ -187,3 +187,6 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
 
          ![Target2/exploit_run.JPG](Target2/exploit_run.JPG)
          
+         - Test that the backdoor.php script was correctly uploaded and run by asking it to fetch the /etc/passwd file by going to http://192.168.1.115/backdoor.php?cmd=cat%20/etc/passwd:
+
+         ![Target2/passwd_file_exfiltrated.JPG](Target2/passwd_file_exfiltrated.JPG)
