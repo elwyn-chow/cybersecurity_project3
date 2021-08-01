@@ -69,10 +69,8 @@ The following vulnerabilities were identified on each target:
 | Apache HTTP Server 2.4.0 to 2.4.41                  | 6.1 Medium               | [CVE-2020-1927](https://nvd.nist.gov/vuln/detail/CVE-2020-1927) |
 | Apache HTTP Server versions 2.4.41 to 2.4.46        | 7.5 High                 | [CVE-2020-13950](https://nvd.nist.gov/vuln/detail/CVE-2020-13950) |
 
+`nmap -sV –script vulners –script-args mincvss=7.0 192.168.1.110`
 
-I followed the [instructions on detecting CVEs using nmap](https://securitytrails.com/blog/nmap-vulnerability-scan) vulnerability scan scripts.
-
-`nmap -sV --script=vulscan/vulscan.nse 192.168.1.110`
 [Results of nmap scan](nmap_target1_vulscan.txt)
 
 ### Exploitation
@@ -82,8 +80,10 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 - Target 1
   - `flag1.txt`: _TODO: Insert `flag1.txt` hash value_
     - **Exploit Used**
-      - _TODO: Identify the exploit used_
-      - _TODO: Include the command run_
+      - Exploited weak password
+         - Found a list of WordPress users by running wpscan `wpscan –url http://example.com –enumerate u`
+          [wpscan results](Target1/wpscan_user_enumerate.txt)
+      
   - `flag2.txt`: _TODO: Insert `flag2.txt` hash value_
     - **Exploit Used**
       - _TODO: Identify the exploit used_
