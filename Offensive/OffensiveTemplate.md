@@ -123,12 +123,12 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
        - Logged in as michael (same exploit used in flag 1, 2, and 3)
        - Using the WordPress database credentials as in flag 3, found list of tables in the database:
          `show tables`
-         ![Target1/wordpress_tables.JPG](wordpress_tables.JPG)
+         ![Target1/wordpress_tables.JPG](Target1/wordpress_tables.JPG)
        - Examined wp_users table schema and contents:
          `describe wp_users`
        - Examined relevant wp_users contents:  
           `select user_login, user_pass from wp_users;`
-          ![Target1/wp_users_schema_and_contents.JPG](wp_users_schema_and_contents.JPG)
+          ![Target1/wp_users_schema_and_contents.JPG](Target1/wp_users_schema_and_contents.JPG)
        - Exfiltrated table contents:
           ```
           select user_login, user_pass from wp_users
