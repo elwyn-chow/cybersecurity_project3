@@ -174,4 +174,11 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
          - Open http://192.168.1.115/vendor/PATH in web browser:
          
            ![Target2/flag1_found.JPG](Target2/flag1_found.JPG)
+  - `flag2`: 
+    - **Exploit Used**
+      - Exploiting PHPMailer CVE-2016-10033
+
+    - **Exploit Commands**
+         - In the search for flag1, I noticed that the directory http://192.168.1.115/vendors/ had a file called class.phpmailer.php. So I ran searchsploit to look for exploits of that file. Notably it found the [exploits/php/webapps/40974.py](https://www.exploit-db.com/exploits/40974)
          
+         ![Target2/searchsploit.JPG](Target2/searchsploit.JPG)
