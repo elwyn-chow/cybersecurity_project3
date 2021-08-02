@@ -40,7 +40,7 @@ frank-n-ted.com
 ## Illegal Downloads
 
 1. Find the following information about the machine with IP address `10.0.0.201`:
-    - MAC address
+    - MAC address: 00:16:17:18:66:c8
     - Windows username
     - OS version
 
