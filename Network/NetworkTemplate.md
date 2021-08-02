@@ -41,7 +41,10 @@ frank-n-ted.com
 
 1. Find the following information about the machine with IP address `10.0.0.201`:
     - MAC address: 00:16:17:18:66:c8
-    - Windows username
-    - OS version
+    - Windows username: elmer.blanco
+    - OS version: Windows NT 10.0
+
+   https://www.wireshark.org/docs/dfref/s/smb_netlogon.html
 
 2. Which torrent file did the user download?
+    Betty_Boop_Rhythm_on_the_Reservation.avu.torrent
