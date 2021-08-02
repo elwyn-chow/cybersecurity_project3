@@ -83,8 +83,8 @@ metricbeat indice
 Alert 3 is implemented as follows:
   - **Metric**: the maximum CPU usage (in percent) over all documents during the last 5 minutes
   - **Threshold**: 0.5%
-  - **Vulnerability Mitigated**: attempts to run brute force crackers while logged into file system
-  - **Reliability**: low - 0.5% is a very low threshold and it is easy for an attacker to exfiltrate password files/hashes to crack on another machine
+  - **Vulnerability Mitigated**: detecting living off the land attacks which use CPU resources eg running brute force crackers while logged into file system
+  - **Reliability**: low - 0.5% seems to be very low threshold but if the virtual machine has a powerful CPU, the baseline CPU use may be normally very low. It is easy for an attacker to exfiltrate password files/hashes to crack on another machine.
 
 
 ### Suggestions for Going Further (Optional)
