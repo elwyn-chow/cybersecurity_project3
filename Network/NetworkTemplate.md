@@ -36,9 +36,9 @@ Trojan
 
 1. **Find the following information about the infected Windows machine:**
 
-    - Host name: Rotterdam-PC
-    - IP address: 172.16.4.205
-    - MAC address: 00:59:07:b0:63:a4
+    - **Host name:** Rotterdam-PC
+    - **IP address:** 172.16.4.205
+    - **MAC address:** 00:59:07:b0:63:a4
     
     ![vulnerable_windows_machine1.JPG](vulnerable_windows_machine1.JPG)
    
@@ -46,9 +46,11 @@ Trojan
 
    matthijs.devries
    
-   ![vulnerable_windows_machine2.JPG](vulnerable_windows_machine2.JPG)**
+   ![vulnerable_windows_machine2.JPG](vulnerable_windows_machine2.JPG)
    
-3. **What are the IP addresses used in the actual infection traffic?
+3. **What are the IP addresses used in the actual infection traffic?**
+
+   **185.243.115.84**
 
    When viewing the Conversations between 172.16.4.205 and other IP addresses, 185.243.115.84 had the most number of packets and largest bytes.
    
@@ -90,6 +92,6 @@ Trojan
 
 2. **Which torrent file did the user download?**
 
-    Betty_Boop_Rhythm_on_the_Reservation.avu.torrent
+    Betty_Boop_Rhythm_on_the_Reservation.avi.torrent
 
     ![illegal_downloads2.JPG](illegal_downloads2.JPG)
