@@ -84,7 +84,8 @@ Alert 3 is implemented as follows:
   - **Metric**: the maximum CPU usage (in percent) over all documents during the last 5 minutes
   - **Threshold**: 0.5%
   - **Vulnerability Mitigated**: detecting living off the land attacks which use CPU resources eg running brute force crackers while logged into file system
-  - **Reliability**: low - 0.5% seems to be very low threshold but if the virtual machine has a powerful CPU, the baseline CPU use may be normally very low. It is easy for an attacker to exfiltrate password files/hashes to crack on another machine.
+  - **Reliability**: low - 0.5% seems to be very low threshold but if the virtual machine has a powerful CPU, the baseline CPU use may be normally very low. It is easy for an attacker to exfiltrate password files/hashes to crack on another machine. I took a screen capture of running top on Target 1 and it has a very high idle CPU value.
+  ![target1_top.JPG](target1_top.JPG)
 
 
 ### Suggestions for Going Further (Optional)
