@@ -122,7 +122,7 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
       - `cd /`
       - `find . -name flag\* 2>/dev/null`
       - `cat /var/www/flag2.txt`            
-      ![Target1/flag2_found.JPG](Target1/flag1_found.JPG)
+      ![Target1/flag2_found.JPG](Target1/flag2_found.JPG)
   - `flag3 is in mySQL database`: afc01ab56b50591e7dcc93122770cd2
     - **Exploits Used**
       - Exploited weak password (same exploit as in flag 1)
