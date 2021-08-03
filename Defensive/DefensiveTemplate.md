@@ -140,4 +140,25 @@ The logs and alerts generated during the assessment suggest that this network is
   sudo apt-get install apache2
    ```
   - **Why It Works**: It updates Apache. The newer version of Apache does not have this vulnerability.
-
+- General vulnerabilities 1: weak passwords
+  - **Patch**: 
+     - enforce a strong password policy by configuring the system to automatically enforce it
+     - have an administrative  policy and inform staff that passwords are not used to be reused for multiple systems
+     - force michael and steven to change their passwords or disable their accounts if they are no longer employed here
+  - **Why It Works**: strong passwords are harder to crack by brute force and reusing passwords makes multiple systems vulnerable. michael and steven's passwords have been compromised and may already be being used by attackers
+- General vulnerabilities 2: files containing sensitive data were publicly web accessible
+  - **Patch**: 
+     - change directory permissions so normal users cannot upload to /var/www/html
+     - change directory permissions so directory contents cannot be browsed
+     - check contents of files (eg write a cron job to grep for sensitive data)
+  - **Why It Works**: prevents normal users from uploading, prevents attackers from seeing contents of directory, mitigates existing files that have been compromised
+- General vulnerabilities 3: poor file permission settings
+  - **Patch**: 
+    - change directory and file permissions so normal users cannot access to configuration files and directories
+    - change existing password because the current password has been compromised
+  - **Why It Works**: non-administrative users should no have access to configuration files (principle of least priviledge)
+- General vulnerabilities 4: sudo permissions 
+  - **Patch**: 
+     -  reevaluate steven’s sudo permissions
+     -  remove python sudo access 
+  - **Why It Works**: it tightens sudo priviledges and therefore reduces attack surface
