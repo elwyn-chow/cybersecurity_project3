@@ -105,7 +105,20 @@ It triggered two watchers:
 - Each alert above pertains to a specific vulnerability/exploit. Recall that alerts only detect malicious behavior, but do not stop it. For each vulnerability/exploit identified by the alerts above, suggest a patch. E.g., implementing a blocklist is an effective tactic against brute-force attacks. It is not necessary to explain _how_ to implement each patch.
 
 The logs and alerts generated during the assessment suggest that this network is susceptible to several active threats, identified by the alerts above. In addition to watching for occurrences of such threats, the network should be hardened against them. The Blue Team suggests that IT implement the fixes below to protect the network:
-- Vulnerability 1: CVE-2001-0554 - Buffer overflow in BSD-based telnetd telnet daemon on various operating systems allows remote attackers to execute arbitrary commands via a set of options including AYT (Are You There), which is not properly handled by the telrcv function.
+- Alert 1: Excessive HTTP Errors
+  - **Patch**: 
+  - **Why It Works**:
+
+
+- Alert 2: HTTP Request Size Monitor
+  - **Patch**: 
+  - **Why It Works**:  
+
+- Alert 3: CPU Usage Monitor
+  - **Patch**: 
+  - **Why It Works**:
+  
+- Critical Vulnerability 1: CVE-2001-0554 - Buffer overflow in BSD-based telnetd telnet daemon on various operating systems allows remote attackers to execute arbitrary commands via a set of options including AYT (Are You There), which is not properly handled by the telrcv function.
   - **Patch**: 
   Update ssh:
   ```
@@ -114,7 +127,7 @@ The logs and alerts generated during the assessment suggest that this network is
   sudo apt-get install openssh-server
    ```
   - **Why It Works**: It updates ssh. The newer version of ssh does not have this vulnerability.
-- Vulnerability 2: CVE-2017-7679 - In Apache httpd 2.2.x before 2.2.33 and 2.4.x before 2.4.26, mod_mime can read one byte past the end of a buffer when sending a malicious Content-Type response header.
+- Critical Vulnerability 2: CVE-2017-7679 - In Apache httpd 2.2.x before 2.2.33 and 2.4.x before 2.4.26, mod_mime can read one byte past the end of a buffer when sending a malicious Content-Type response header.
   - **Patch**: 
   Update apache to the latest version:
   ```
@@ -122,7 +135,7 @@ The logs and alerts generated during the assessment suggest that this network is
   sudo apt-get install apache2
    ```
   - **Why It Works**: It updates Apache. The newer version of Apache  does not have this vulnerability.
-- Vulnerability 3: CVE-2021-26691 - In Apache HTTP Server versions 2.4.0 to 2.4.46 a specially crafted SessionHeader sent by an origin server could cause a heap overflow.
+- Critical Vulnerability 3: CVE-2021-26691 - In Apache HTTP Server versions 2.4.0 to 2.4.46 a specially crafted SessionHeader sent by an origin server could cause a heap overflow.
   - **Patch**: 
   Update apache to the latest version:
   ```
