@@ -94,10 +94,10 @@ Alert 3 is implemented as follows:
 The logs and alerts generated during the assessment suggest that this network is susceptible to several active threats, identified by the alerts above. In addition to watching for occurrences of such threats, the network should be hardened against them. The Blue Team suggests that IT implement the fixes below to protect the network:
 - Vulnerability 1: Excessive HTTP Errors
   - **Patch**: Set firewall to block requests from offensive IP addresses
-  - **Why It Works**: 
+  - **Why It Works**: It's a barrier that works... until the attacker attacks from a different IP address.
 - Vulnerability 2: HTTP Request Size Monitor
-  - **Patch**: set alert to notify SOC only if the client makes large HTTP requuests
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
+  - **Patch**: set alert to notify SOC only if the client makes really large HTTP requuests then block the IP address of the attacker
+  - **Why It Works**: It's a barrier that works... until the attacker attacks from a different IP address.
 - Vulnerability 3: CPU Usage Monitor
-  - **Patch**: TODO: E.g., _install `special-security-package` with `apt-get`_
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
+  - **Patch**: tightly restrict access to common living off the land tools such as john to root with no sudo access. Also tightly restrict installing using apt and rpm and dpkg to root
+  - **Why It Works**: It would prevent attacks from living off the land
