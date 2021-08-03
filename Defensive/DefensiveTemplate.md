@@ -80,6 +80,18 @@ metricbeat indice
 
 `WHEN max() OF system.process.cpu.total.pct OVER all documents IS ABOVE 0.5 FOR THE LAST 5 minutes`
 
+The [Elastic Guide on System fields](https://www.elastic.co/guide/en/beats/metricbeat/current/exported-fields-system.html) states:
+```
+system.process.cpu.total.pct
+The percentage of CPU time spent by the process since the last update. Its value is similar to the %CPU value of the process displayed by the top command on Unix systems.
+
+type: scaled_float
+
+format: percent
+```
+
+The impression I have is this value is a percentage and not the fraction of CPU used.
+
 Alert 3 is implemented as follows:
   - **Metric**: the maximum CPU usage (in percent) over all documents during the last 5 minutes
   - **Threshold**: 0.5%
