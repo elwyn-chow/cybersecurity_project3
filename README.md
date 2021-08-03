@@ -1,4 +1,4 @@
 These are the three reports:
-- [Defensive/DefensiveTemplate.md](Blue Team: Summary of Operations)
-- [Network/NetworkTemplate.md](Network Forensic Analysis Report)
-- [Offensive/OffensiveTemplate.md](Red Team: Summary of Operations)
+- [Blue Team: Summary of Operations](Defensive/DefensiveTemplate.md)
+- [Network Forensic Analysis Report](Network/NetworkTemplate.md)
+- [Red Team: Summary of Operations](Offensive/OffensiveTemplate.md)
