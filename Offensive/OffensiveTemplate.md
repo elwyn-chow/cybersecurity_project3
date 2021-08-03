@@ -136,7 +136,8 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
         `mysqldump -uroot -p"R@v3nSecurity" wordpress | grep --color flag`
         ![Target1/mysqldump_wordpress_command.JPG](Target1/mysqldump_wordpress_command.JPG)
         ![Target1/flags3_and_4_found.JPG](Target1/flags3_and_4_found.JPG)
-  - `/root/flag4.txt`: 715dea6c055b9fe3337544932f2941ce
+  - `flag4 is /root/flag4.txt and in mySQL database`: 715dea6c055b9fe3337544932f2941ce
+    - to find flag4 in the mySQL database, follow steps for flag3 
     - **Exploits Used**
       - Exploited weak password of michael (same exploit as in flag 1)
       - Exploited poorly set file permissions on WordPress configuration file (same exploit as in flag 3)
