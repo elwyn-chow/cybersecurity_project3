@@ -135,6 +135,7 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
       - Created a mySQL dump of WordPress database and filtered it with grep (results show flag3 and flag4):
         `mysqldump -uroot -p"R@v3nSecurity" wordpress | grep --color flag`
         ![Target1/mysqldump_wordpress_command.JPG](Target1/mysqldump_wordpress_command.JPG)
+        
         Tail of mySQLdump:
         ![Target1/flags3_and_4_found.JPG](Target1/flags3_and_4_found.JPG)
   - `flag4 is /root/flag4.txt and in mySQL database`: 715dea6c055b9fe3337544932f2941ce
