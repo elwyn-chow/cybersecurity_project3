@@ -87,6 +87,19 @@ Alert 3 is implemented as follows:
   - **Reliability**: low - 0.5% seems to be very low threshold but if the virtual machine has a powerful CPU, the baseline CPU use may be normally very low. It is easy for an attacker to exfiltrate password files/hashes to crack on another machine. I took a screen capture of running top on Target 1 and it has a very high idle CPU value.
   ![target1_top.JPG](target1_top.JPG)
 
+###Patterns of Traffic & Behavior
+
+The template doesn't say what should go in this section.
+
+The watcher conditions were met:
+![result_conditions_met.JPG](result_conditions_met.JPG)
+
+I wrote a bash scriptcalled `hammer_target1.sh` on Target 1 to trigger two of the watchers:
+![hammer_target1.JPG](hammer_target1.JPG)
+
+It triggered two watchers:
+![excess_http_errors_watcher_workers.JPG](excess_http_errors_watcher_workers.JPG)
+![http_request_size_monitor.JPG](http_request_size_monitor.JPG)
 
 ### Suggestions for Going Further
 - Each alert above pertains to a specific vulnerability/exploit. Recall that alerts only detect malicious behavior, but do not stop it. For each vulnerability/exploit identified by the alerts above, suggest a patch. E.g., implementing a blocklist is an effective tactic against brute-force attacks. It is not necessary to explain _how_ to implement each patch.
