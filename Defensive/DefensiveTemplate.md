@@ -97,6 +97,7 @@ The logs and alerts generated during the assessment suggest that this network is
   Update ssh:
   ```
   sudo apt-get update
+  sudo apt-get install ssh
   sudo apt-get install openssh-server
    ```
   - **Why It Works**: It updates ssh. The newer version of ssh does not have this vulnerability.
@@ -105,7 +106,7 @@ The logs and alerts generated during the assessment suggest that this network is
   Update apache to the latest version:
   ```
   sudo apt-get update
-  sudo apt-get install openssh-server
+  sudo apt-get install apache2
    ```
   - **Why It Works**: It updates Apache. The newer version of Apache  does not have this vulnerability.
 - Vulnerability 3: CVE-2021-26691 - In Apache HTTP Server versions 2.4.0 to 2.4.46 a specially crafted SessionHeader sent by an origin server could cause a heap overflow.
@@ -113,7 +114,7 @@ The logs and alerts generated during the assessment suggest that this network is
   Update apache to the latest version:
   ```
   sudo apt-get update
-  sudo apt-get install openssh-server
+  sudo apt-get install apache2
    ```
   - **Why It Works**: It updates Apache. The newer version of Apache does not have this vulnerability.
 
