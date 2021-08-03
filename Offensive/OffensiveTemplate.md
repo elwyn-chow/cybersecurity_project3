@@ -144,7 +144,7 @@ The Red Team was able to penetrate `Target 1` and `Target 2` and retrieve the fo
       - Exploited weak password of michael (same exploit as in flag 1)
       - Exploited poorly set file permissions on WordPress configuration file (same exploit as in flag 3)
       - Brute force cracking of password of steven
-      - Priviledge escalation to root
+      - Priviledge escalation to root by using steven's sudo python access to open a shell as root
     - **Exploit Commands**
        - Logged in as michael (same exploit used in flag 1, 2, and 3)
        - Using the WordPress database credentials as in flag 3, found list of tables in the database:
